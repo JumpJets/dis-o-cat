@@ -18,5 +18,9 @@ class Core():
         log.info("Core cog unloaded.")
 
 
+    async def on_message(self, message):
+        log.debug("Core.on_message was triggered")
+
+
 def setup(bot):
     bot.add_cog(Core(bot))
