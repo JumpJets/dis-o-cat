@@ -32,8 +32,7 @@ class ItemList(Widget):
     # Use -1 index to deselect all items
     def select_item(self, ind):
         # Clamp index at allowed index range
-        ind = max(ind, -1)
-        ind = min(ind, len(self.item_list))
+        ind = max(min(ind, len(self.item_list)), -1)
 
         self.selected_index = ind
 

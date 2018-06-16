@@ -18,7 +18,7 @@ class ServerList(ItemList):
 
     # Adds server to server list
     def add_item(self, item):
-        if type(item) is ServerData:
+        if isinstance(item, ServerData):
             super().add_item(item.display_name)
             self.server_list.append(item)
         else:
@@ -32,7 +32,7 @@ class ServerList(ItemList):
 
         self.selected_server_ind = ind
         self.server_chosen_event.emit(self.server_list[ind])
-        self.defocus()
+        self.blur()
 
     def on_char_pressed(self, ch):
         if ch == curses.KEY_ENTER or ch == ord('\n') or ch == ord('\r'):

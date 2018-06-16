@@ -15,8 +15,8 @@ class Widget:
         self.focused = focused
         self.on_focus_changed(self.focused)
 
-    # Defocus widget
-    def defocus(self):
+    # Blur widget
+    def blur(self):
         self.focus(False)
 
     # Virtual function to be called when focus changed

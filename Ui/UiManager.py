@@ -27,8 +27,8 @@ class UiManager:
 
         self.focus_single_widget(self.focused_index)
 
-    # Focus widget while defocusing others
-    # Use -1 to defocus all widgets
+    # Focus widget while bluring others
+    # Use -1 to blur all widgets
     def focus_single_widget(self, focus_ind):
         for ind, widget in enumerate(self.widgets):
             widget.focus(ind == focus_ind)
@@ -83,7 +83,7 @@ class UiManager:
             c = stdscr.getch()
             if c == ord('\t'): # Tab to move focus between widgets
                 self.move_focus()
-            elif c == 27: # ESC to defocus all widgets
+            elif c == 27: # ESC to blur all widgets
                 self.focus_single_widget(-1)
             elif c == ord('q'):
                 break  # Q to exit UI

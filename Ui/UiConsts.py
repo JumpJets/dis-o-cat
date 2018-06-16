@@ -6,4 +6,4 @@ color_pairs = {
 }
 
 # Symbols representing that element was too big and was truncated
-trunc_string = '..'
+trunc_string = '…'
